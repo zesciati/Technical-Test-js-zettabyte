@@ -4,6 +4,9 @@
  *
  * Expected:
  * 23
+ * 
+ * - mengubah array elemen menjadi substring untuk dihitung per individu
+ * - dibandingkan antar array elemen untuk menemukan jumlah terbesar
  */
 const sentences = [
   'Mauris ultricies sed sapien eget malesuada. Suspendisse et aliquet odio, id ultrices erat. Praesent vehicula erat nulla. Aliquam a lorem urna. Donec.',
@@ -13,6 +16,13 @@ const sentences = [
 
 function result(sentences) {
   // your code here
+  let res = 0;
+  for(sentence of sentences){
+    if(sentence.split(" ").length > res ){
+      res = sentence.split(" ").length;
+    }
+  }
+  return res;
 }
 
 console.log(result(sentences));
